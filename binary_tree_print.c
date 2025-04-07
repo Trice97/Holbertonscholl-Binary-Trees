@@ -5,8 +5,7 @@
 
 /**
 * print_t - Stores recursively each level in an array of strings
-*
-* @tree: Pointer to the node to print
+** @tree: Pointer to the node to print
 * @offset: Offset to print
 * @depth: Depth of the node
 * @s: Buffer
@@ -17,7 +16,6 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 {
 char b[6];
 int width, left, right, is_left, i;
-
 if (!tree)
 return (0);
 is_left = (tree->parent && tree->parent->left == tree);
@@ -52,12 +50,10 @@ static size_t _height(const binary_tree_t *tree)
 {
 size_t height_l;
 size_t height_r;
-
 height_l = tree->left ? 1 + _height(tree->left) : 0;
 height_r = tree->right ? 1 + _height(tree->right) : 0;
 return (height_l > height_r ? height_l : height_r);
 }
-
 /**
 * binary_tree_print - Prints a binary tree
 *
@@ -67,7 +63,6 @@ void binary_tree_print(const binary_tree_t *tree)
 {
 char **s;
 size_t height, i, j;
-
 if (!tree)
 return;
 height = _height(tree);
